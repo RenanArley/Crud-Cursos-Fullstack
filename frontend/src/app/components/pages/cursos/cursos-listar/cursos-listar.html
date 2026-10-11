@@ -1,0 +1,47 @@
+<div class="container">
+    <div>
+        <form>
+            <div class="mt-4  d-flex justify-content-end">
+                <div class="input-group" style="width: auto;" >
+                    <label for="searchId" class="mx-3 my-2">Id:</label>
+                        <input id="searchId" name="searchId" type="number" class="form-control" style="max-width: 100px;"
+                            placeholder="" aria-label="Informe o id do curso" [(ngModel)]="searchId"> <button id="search" class="btn btn-outline-primary" type="button" (click)="Get();">Pesquisar</button>
+                    <button class="btn btn-outline-secondary" type="button" (click)="RedirectToCadastrar();">Cadastrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div>
+        <h1 class="text-center mt-3" >Lista de Cursos</h1>
+        <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+            @for (curso of this.cursos(); track curso.id) {
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Id: {{curso.id}}<br> Nome: {{curso.nome}}</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"> Carga Horaria: {{curso.cargaHoraria}}</li>
+                                <li class="list-group-item">Valor: {{curso.valor | currency:'BRL'}}</li>
+                                <li class="list-group-item">Data Inicio: {{curso.dataInicio | date:'dd/MM/yyyy'}}</li>
+                                <li class="list-group-item">
+                                    Online: 
+                                    <span class="badge" [class.bg-success]="curso.online" [class.bg-secondary]="!curso.online">
+                                        {{curso.online ? 'Online' : 'Não Online'}}
+                                    </span>
+                                </li>
+                                <li class="list-group-item">
+                                    Ativo:
+                                    <span class="badge" [class.bg-success]="curso.ativo" [class.bg-danger]="!curso.ativo">
+                                        {{curso.ativo ? 'Ativo' : 'Inativo'}}
+                                    </span>
+                                </li>
+                            </ul>
+                            <a [routerLink]="['/cursos/editar', curso.id]" class="btn btn-primary">Editar</a>
+                            <a (click)="Delete(curso.id!)" class="btn btn-danger">Deletar</a>                            
+                        </div>
+                    </div>    
+                </div>
+            } 
+        </div>
+    </div>
+</div>

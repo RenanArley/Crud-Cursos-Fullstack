@@ -1,0 +1,24 @@
+# Visual Studio e .NET
+**/.vs/
+**/bin/
+**/obj/
+**/packages/
+**/*.user
+**/*.suo
+
+# Angular e Node.js
+**/node_modules/
+**/.angular/
+**/dist/
+**/coverage/
+npm-debug.log*
+yarn-debug.log*
+
+# Logs da aplicação
+*.log
+**/App_Data/log_erros.txt
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
