@@ -1,6 +1,6 @@
 # Sistema de Gerenciamento de Cursos — Full Stack
 
-Aplicação web desenvolvida para Avalição do curso de programação para praticar a construção de uma aplicação Full Stack. O sistema permite cadastrar, consultar, editar e excluir cursos, integrando uma interface Angular a uma API REST em C# e a um banco de dados SQL Server.
+Aplicação web desenvolvida para Avaliação 06 do curso de programação, para praticar a construção de uma aplicação Full Stack. O sistema permite cadastrar, consultar, editar e excluir cursos, integrando uma interface Angular a uma API REST em C# e a um banco de dados SQL Server.
 
 ## Tecnologias utilizadas
 
